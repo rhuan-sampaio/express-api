@@ -3,7 +3,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("world", {
+    await queryInterface.createTable("worlds", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -41,7 +41,7 @@ module.exports = {
       mundoId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "world",
+          model: "worlds",
           key: "id",
         },
         onUpdate: "CASCADE",
@@ -60,6 +60,6 @@ module.exports = {
 
   async down(queryInterface, Sequelize) {
     await queryInterface.dropTable("usuarioM2MMundo");
-    await queryInterface.dropTable("world");
+    await queryInterface.dropTable("worlds");
   },
 };
