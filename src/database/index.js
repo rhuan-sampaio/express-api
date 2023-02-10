@@ -14,7 +14,7 @@ models.forEach((model) => {
 const user = User.init(connection);
 const world = World.init(connection);
 
-user.belongsToMany(world, { through: "usuarioM2MMundo", as: "world" });
+user.belongsToMany(world, { through: "usuarioM2MMundo", as: "worlds" });
 world.belongsToMany(user, { through: "usuarioM2MMundo", as: "users" });
 
 (async () => {
