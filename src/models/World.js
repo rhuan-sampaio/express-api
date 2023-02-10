@@ -1,12 +1,18 @@
 import Sequelize, { Model } from "sequelize";
 
-export default class User extends Model {
+export default class World extends Model {
   static init(sequelize) {
     super.init(
       {
-        discord_id: {
+        nome: {
           type: Sequelize.STRING,
           defaultValue: "",
+          validate: {
+            len: {
+              args: [3, 255],
+              msg: "Campo deve ter entre 3 e 255 caracteres.",
+            },
+          },
         },
       },
       {
