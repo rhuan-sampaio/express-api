@@ -8,6 +8,10 @@ export default class User extends Model {
           type: Sequelize.STRING,
           defaultValue: "",
         },
+        nome: {
+          type: Sequelize.STRING,
+          defaultValue:'',
+        }
       },
       {
         sequelize,
