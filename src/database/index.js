@@ -18,5 +18,5 @@ user.belongsToMany(world, { through: "usuarioM2MMundo", as: "worlds" });
 world.belongsToMany(user, { through: "usuarioM2MMundo", as: "users" });
 
 (async () => {
-  await connection.sync({ force: true });
+  await connection.sync({ force: false });
 })();

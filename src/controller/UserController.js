@@ -12,7 +12,6 @@ class UserController {
 
   async store(req, res) {
     try {
-      console.log("Este é  o req " + req.body);
       const newUser = await User.create(req.body);
       const { id, discord_id, nome } = newUser;
       return res.json({ id, discord_id, nome });
